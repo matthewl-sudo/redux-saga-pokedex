@@ -1,12 +1,13 @@
 import * as types from '../actionTypes';
 
-export const fetchProfileAction = () => {
+export const fetchProfileAction = (name) => {
     return {
-        type: types.FETCH_PROFILE
+        type: types.FETCH_PROFILE,
+        payload: {name: name}
     }
 };
 
-export const profilFetchedAction = () =>{
+export const profileFetchedAction = () =>{
     return {
         type: types.PROFILE_FETCHED
     }

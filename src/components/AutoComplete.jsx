@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from "react";
 // import {useDispatch, useSelector} from "react-redux";
 // import _ from "lodash";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 
 const AutoComplete = () =>{
     const [display, setDisplay] = useState(false);
@@ -45,7 +45,7 @@ const AutoComplete = () =>{
                    .filter(({name}) => name.indexOf(search.toLowerCase()) > -1).slice(0,5)
                    .map((value, index) => {
                        return (<div onClick={()=> setPokemonSearch(value.name)} className="option" key={index} tabIndex="0">
-                           <span><Link to={`/pokemon/${value.name}`}>{value.name}</Link></span>
+                           <span>{value.name}</span>
                        </div>)
                    })}
                </div>
