@@ -2,8 +2,7 @@ import { React, } from "react";
 import { fetchProfileAction } from "../actions";
 import {connect} from "react-redux";
 // import {useDispatch, useSelector} from "react-redux";
-// import _ from "lodash";
-// import {Link} from "react-router-dom";
+
 
 const ListSelection = ({names, fetchProfileAction}) =>{
   function dispatchBtnAction(e) {
