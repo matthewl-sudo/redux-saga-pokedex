@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import { FETCH_PROFILE, SET_PROFILE } from "../actionTypes"
+import { FETCH_PROFILE, SET_PROFILE, SET_TEXT } from "../actionTypes"
 
-const initialState = {name: ''}
+const initialState = {name: '', isLoading: true}
 
 export function fetchProfileReducer(state = initialState, action) {
     switch (action.type) {
@@ -9,8 +9,11 @@ export function fetchProfileReducer(state = initialState, action) {
         // console.log('FETCHED', state, action.payload);
         return {...state, name: action.payload.name};
       case SET_PROFILE:
-        console.log('SET', action.payload)
-        return {...state, info: action.payload}
+        console.log('set_profile_reducer', action.payload)
+        return {...state, info: action.payload, isLoading: false}
+      case SET_TEXT:
+        console.log('set_text-reducer', action.payload)
+        return {...state, text: action.payload}
       default:
         return state;
     }

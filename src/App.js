@@ -1,26 +1,28 @@
-import React,{} from "react"
+import React, {useState} from "react"
 import './App.css';
 //components
 import AutoComplete from './components/AutoComplete';
 import InfoContainer from './components/InfoContainer';
 import ListSelection from './components/ListSelection';
 //redux
-import {useDispatch, connect} from "react-redux"
-import { fetchProfileAction } from "./actions";
+import { connect} from "react-redux"
 
 const App = () => {
-  // console.log(props)
-  // const dispatch = useDispatch()
-  // const handleDispatch = () => {
-  //   dispatch(fetchProfileAction())
-  // }
-
+  const [search, setSearch] = useState(true);
+  const handleSearch = () => {
+    setSearch(!search)
+  }
   return (
     <div className="grid">
       <div className="grid-item box1 ">
         <h1>search box</h1>
-        <AutoComplete/>
-        <ListSelection names={["bulbasaur", "charmander", "squirtle"]} />
+        {!search ? 
+          <button onClick={handleSearch}>Search</button>:
+          <button onClick={handleSearch}>List</button>}
+        {search ?
+          <AutoComplete/>:
+          <ListSelection names={["bulbasaur", "charmander", "squirtle"]} />
+        }
       </div>
       <div className="grid-item box2">
       <h1>main info box</h1>
@@ -33,6 +35,7 @@ const App = () => {
   );
 }
 const mapStateToProps = (state) => {
+  console.log(state.pokemon.isLoading)
   return { data: state.pokemon.name}
 }
 export default connect(mapStateToProps)(App);

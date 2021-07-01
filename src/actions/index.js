@@ -3,7 +3,8 @@ import * as types from '../actionTypes';
 export const fetchProfileAction = (name) => {
     return {
         type: types.FETCH_PROFILE,
-        payload: {name: name}
+        payload: {name: name},
+        isLoading: true
     }
 };
 

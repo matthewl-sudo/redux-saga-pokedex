@@ -1,9 +1,10 @@
 import { React, useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { fetchProfileAction } from "../actions";
 // import {useDispatch, useSelector} from "react-redux";
 // import _ from "lodash";
-// import {Link} from "react-router-dom";
 
-const AutoComplete = () =>{
+const AutoComplete = ({fetchProfileAction}) =>{
     const [display, setDisplay] = useState(false);
     const [options, setOptions] = useState([]);
     const [search, setSearch] = useState("");
@@ -28,7 +29,9 @@ const AutoComplete = () =>{
     const setPokemonSearch = poke => {
         setSearch(poke);
         setDisplay(false);
+        fetchProfileAction(poke);
     };
+
 
     return(
         <div>
@@ -54,4 +57,4 @@ const AutoComplete = () =>{
     )
 };
 
-export default AutoComplete;
+export default connect(null,{fetchProfileAction})(AutoComplete);
