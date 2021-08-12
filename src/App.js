@@ -2,10 +2,12 @@ import React, {useState} from "react"
 import './App.css';
 //components
 import AutoComplete from './components/AutoComplete';
-import InfoContainer from './components/InfoContainer';
 import ListSelection from './components/ListSelection';
+//containers
+import InfoStatsContainer from './components/InfoStatsContainer';
+import InfoTextContainer from './components/InfoTextContainer';
 //redux
-import { connect} from "react-redux"
+// import { connect} from "react-redux"
 
 const App = () => {
   const [search, setSearch] = useState(true);
@@ -16,7 +18,7 @@ const App = () => {
     <div className="grid">
       <div className="grid-item box1 ">
         <h1>search box</h1>
-        {!search ? 
+        {!search ?
           <button onClick={handleSearch}>Search</button>:
           <button onClick={handleSearch}>List</button>}
         {search ?
@@ -25,17 +27,20 @@ const App = () => {
         }
       </div>
       <div className="grid-item box2">
-      <h1>main info box</h1>
+        <h1>main info box</h1>
+        <InfoStatsContainer/>
       </div>
       <div className="grid-item box3">
         <h1>another info box</h1>
-        <InfoContainer/>
+        <InfoTextContainer/>
       </div>
     </div>
   );
 }
-const mapStateToProps = (state) => {
-  console.log(state.pokemon.isLoading)
-  return { data: state.pokemon.name}
-}
-export default connect(mapStateToProps)(App);
+// const mapStateToProps = (state) => {
+//   console.log(state.pokemon.isLoading)
+//   return { data: state.pokemon.name}
+// }
+// export default connect(mapStateToProps)(App);
+
+export default App;
