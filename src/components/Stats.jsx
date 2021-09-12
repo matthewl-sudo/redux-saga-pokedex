@@ -1,6 +1,6 @@
 import { React, } from "react";
 // import {useDispatch, useSelector} from "react-redux";
-
+// to see git changes from password to personal access token
 
 const Stats = (info) =>{
     const statInfo = info.info;
