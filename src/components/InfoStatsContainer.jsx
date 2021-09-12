@@ -8,10 +8,12 @@ const InfoStatsContainer = () => {
     const info = useSelector((state) => state.pokemon.info)
     if (info) {
         // console.log('fbdshbdh', info[14])
+        // console.log('info', info)
+
     return(<div>
             <h1>hello {selectedPokemon.name} </h1>
             <Carousel images={info[14]}/>
-            <Stats/>
+            <Stats info={info}/>
         </div>)
     }
     else {
