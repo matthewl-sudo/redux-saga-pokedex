@@ -55,7 +55,7 @@ const Carousel = (images) =>{
                 >
                     <h1 style={{ fontSize: 20 }} > ◀️ </h1>
                 </div>
-                <div className="center"></div>
+                <div className="center"><h1 style={{ fontSize: 15 }} > {currIndex+1} </h1></div>
                 <div
                   className="right"
                   onClick={() => {
@@ -65,7 +65,6 @@ const Carousel = (images) =>{
                     <h1 style={{ fontSize: 20 }} > ▶️ </h1>
                 </div>
             </div>
-            Carousels goes here
         </div>
     )
 };

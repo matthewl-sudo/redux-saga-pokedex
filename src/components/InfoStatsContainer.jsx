@@ -10,8 +10,8 @@ const InfoStatsContainer = () => {
         // console.log('fbdshbdh', info[14])
         // console.log('info', info)
 
-    return(<div>
-            <h1>hello {selectedPokemon.name} </h1>
+    return(<div className="infoStatsContainer">
+            <h3> {selectedPokemon.name} </h3>
             <Carousel images={info[14]}/>
             <Stats info={info}/>
         </div>)

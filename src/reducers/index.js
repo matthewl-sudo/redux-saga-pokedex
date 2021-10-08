@@ -13,7 +13,7 @@ export function fetchProfileReducer(state = initialState, action) {
         return {...state, info: action.payload, isLoading: false}
       case SET_TEXT:
         console.log('set_text-reducer', action.payload)
-        return {...state, text: action.payload}
+        return {...state, text: action.payload, isLoading: false}
       default:
         return state;
     }

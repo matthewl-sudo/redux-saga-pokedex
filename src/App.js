@@ -27,11 +27,11 @@ const App = () => {
         }
       </div>
       <div className="grid-item box2">
-        <h1>main info box</h1>
+        <h2>main info box</h2>
         <InfoStatsContainer/>
       </div>
       <div className="grid-item box3">
-        <h1>another info box</h1>
+        <h3>another info box</h3>
         <InfoTextContainer/>
       </div>
     </div>
