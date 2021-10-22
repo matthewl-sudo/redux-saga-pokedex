@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import _ from "lodash";
-import "./Carousel.css";
+import "./Carousel.scss";
 const Carousel = (images) =>{
     const [imgState, setImgState] = useState([])
     const [currIndex, setIndex] = useState(0);
@@ -47,23 +47,28 @@ const Carousel = (images) =>{
             className="carouselInner"
             style={{backgroundImage: `url(${_.pull(_.flattenDeep(imgState), undefined)[currIndex]})`}}
             >
-                <div
-                className="left"
-                onClick={() => {
-                    currIndex > 0 && setIndex(currIndex - 1);
-                }}
-                >
-                    <h1 style={{ fontSize: 20 }} > ◀️ </h1>
-                </div>
+                {currIndex > 0 ?
+                    <div
+                    className="left"
+                    onClick={() => {
+                        setIndex(currIndex - 1);
+                    }}
+                    >
+                        <h1 style={{ fontSize: 20 }} > ◀️ </h1>
+                    </div>: 
+                    <div className="left"></div>
+                }
                 <div className="center"><h1 style={{ fontSize: 15 }} > {currIndex+1} </h1></div>
-                <div
-                  className="right"
-                  onClick={() => {
-                    currIndex < _.pull(_.flattenDeep(imgState), undefined).length - 1 && setIndex(currIndex + 1);
-                  }}
-                >
-                    <h1 style={{ fontSize: 20 }} > ▶️ </h1>
-                </div>
+                {currIndex < _.pull(_.flattenDeep(imgState), undefined).length - 1 ?
+                    <div
+                    className="right"
+                    onClick={() => {
+                        setIndex(currIndex + 1);
+                    }}
+                    >
+                        <h1 style={{ fontSize: 20 }} > ▶️ </h1>
+                    </div>:
+                    <div className="right"></div>}
             </div>
         </div>
     )

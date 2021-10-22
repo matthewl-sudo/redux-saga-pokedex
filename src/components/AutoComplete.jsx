@@ -40,6 +40,7 @@ const AutoComplete = ({fetchProfileAction}) =>{
            onClick={()=> setDisplay(!display)}
            placeholder="Type to Search"
            value={search}
+           autocomplete="off"
            onChange={event => setSearch(event.target.value)}
            />
            {display && (

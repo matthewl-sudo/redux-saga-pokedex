@@ -1,7 +1,7 @@
 import { React, } from "react";
 // import {useDispatch, useSelector} from "react-redux";
 import _ from "lodash";
-import "./RichText.css";
+import "./RichText.scss";
 
 
 const RichText = ({text}) =>{

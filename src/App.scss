@@ -1,0 +1,83 @@
+
+span{
+  position: relative;
+}
+p{
+  display: flex;
+}
+a{
+  color:white;
+  text-decoration: none;
+}
+input{
+  background-color: white;
+  position: relative;
+  font-family: "press+start+p2";
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) ;
+  background-color: rgb(207, 17, 17);
+}
+
+.grid-item{
+  position: relative;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  background-color: rgb(235, 236, 234);
+}
+
+.box0{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-color: rosybrown;
+
+}
+.box1{
+  max-width: 400px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: royalblue;
+}
+
+.box2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;  
+  grid-row-end: 3;
+  margin-bottom: 1.5em;
+  background-color: sandybrown;
+}
+
+.box3 {
+  max-width: 400px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;  
+  grid-row-end: 3;
+  margin-bottom: 1.5em;
+  background-color: seagreen;
+}
+.border-right{
+  border: 5px solid #303131;
+  -webkit-border-radius: 0px 40px 40px 0px;
+  -moz-border-radius: 0px 40px 40px 0px;
+  border-radius: 0px 40px 40px 0px;
+
+}
+.border-left{
+  border: 5px solid #303131;
+  -webkit-border-radius: 40px 0px 0px 40px;
+  -moz-border-radius: 40px 0px 0px 40px;
+  border-radius: 40px 0px 0px 40px;
+}
+.border{
+  border: 5px solid #303131;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+}
