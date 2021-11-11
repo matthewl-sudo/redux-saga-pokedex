@@ -12,7 +12,7 @@ const AutoComplete = ({fetchProfileAction}) =>{
     //set api call
     useEffect(()=>{
         const pokemon = [];
-        const promises = new Array(500).fill().map((value, index)=>
+        const promises = new Array(898).fill().map((value, index)=>
             fetch(`https://pokeapi.co/api/v2/pokemon-form/${index+1}`));
             
         Promise.all(promises).then((pokemonArr) => {

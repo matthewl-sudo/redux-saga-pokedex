@@ -14,25 +14,49 @@ const App = () => {
   const handleSearch = () => {
     setSearch(!search)
   }
+  const [panel, setPanel] = useState(false);
+  const handlePanel = () =>{
+    setPanel(!panel)
+  }
   return (
-    <div className="grid border">
-        <div className="grid-item box1 border-left">
-          <h1>search box</h1>
-          {!search ?
-            <button onClick={handleSearch}>Search</button>:
-            <button onClick={handleSearch}>List</button>}
-          {search ?
-            <AutoComplete/>:
-            <ListSelection names={["bulbasaur", "charmander", "squirtle"]} />
-          }
-        </div>
-        <div className="grid-item box2 border-left">
-          <h3>another info box</h3>
-          <InfoTextContainer/>
-        </div>
-        <div className="grid-item box3 border-right">
-          <h2>main info box</h2>
-          <InfoStatsContainer/>
+    <div className={panel ? "grid" : "single-column"}>
+        <nav role="navigation" className="">
+          <div id="menuToggle">
+            <input type="checkbox" onClick={handlePanel}/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a href="#home"><li>Home</li></a>
+              <a href="#about"><li>About</li></a>
+              <a href="#info"><li>Info</li></a>
+              <p>what exactly is going on under the hood?</p>
+            </ul>
+          </div>
+        </nav>
+        <div className="inner-grid">
+          <div className="grid-item box1 border">
+            <div className="circle"></div>
+            <br/><br/><br/>
+            <h3>search box</h3>
+            {!search ?
+              <button onClick={handleSearch}>Search</button>
+              :
+              <button onClick={handleSearch}>List</button>
+            }
+            {search ?
+              <AutoComplete/>:
+              <ListSelection names={["bulbasaur", "charmander", "squirtle"]} />
+            }
+          </div>
+          <div className="grid-item box2 border">
+            <h4>another info box</h4>
+            <InfoTextContainer/>
+          </div>
+          <div className="grid-item box3 border">
+            <h4>main info box</h4>
+            <InfoStatsContainer/>
+          </div>
         </div>
     </div>
   );

@@ -6,7 +6,6 @@ import _ from "lodash";
 function* watchFetchProfile() {
     yield takeEvery( FETCH_PROFILE, fetchProfile);
     yield takeEvery( FETCH_PROFILE, fetchText);
-    yield console.log('watchfetch');
 }
 
 //worker saga
