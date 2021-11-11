@@ -15,9 +15,9 @@ const InfoTextContainer = () => {
         .catch((err)=> console.log('error', err))
 
     console.log(`"${evo}"`)
-    
-    // console.log(text);
 
+    // console.log(text);
+    
    if(text){ 
        return(<div>
                 <h4> {selectedPokemon}</h4>
