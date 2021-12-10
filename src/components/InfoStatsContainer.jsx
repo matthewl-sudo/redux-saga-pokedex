@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Stats from "./Stats";
 import Carousel from "./Carousel";
+import MoveList from "./MoveList";
 
 const InfoStatsContainer = () => {
     const selectedPokemon = useSelector((state) => state.pokemon)
@@ -13,6 +14,7 @@ const InfoStatsContainer = () => {
     return(<div className="infoStatsContainer">
             <h3> {selectedPokemon.name} </h3>
             <Carousel images={info[14]}/>
+            <MoveList moves={info[9]}/>
             <Stats info={info}/>
         </div>)
     }

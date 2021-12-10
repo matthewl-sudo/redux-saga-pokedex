@@ -23,7 +23,7 @@ const Stats = (info) =>{
                             return <p key={el.stat.name}>{el.stat.name}: {el.base_stat}</p>
                         })
                     }
-                
+
             </div>
         </div>
     )
