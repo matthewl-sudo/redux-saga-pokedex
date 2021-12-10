@@ -5,3 +5,5 @@ export const PROFILE_FETCHED = 'PROFILE_FETCHED';
 export const SET_PROFILE = 'SET_PROFILE';
 
 export const SET_TEXT = 'SET_TEXT';
+
+export const SET_EVOLUTION_CHAIN = 'SET_EVOLUTION_CHAIN';

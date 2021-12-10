@@ -6,8 +6,7 @@ import "./RichText.scss";
 
 const RichText = ({text}) =>{
     const textContent = text[6];
-    const colorDescription = text[2].name+", "+text[25].name+", "+text[10][7].genus;
-    
+
     //_.flow to turn object into array then filtering for english text then back into object all in one line
     const enText = _.flow([
         Object.entries,
@@ -25,7 +24,6 @@ const RichText = ({text}) =>{
 
     return(
         <div>
-            <p>{colorDescription}</p>
             <div className="text">
                 {Object.values(enText).map((value, key) =>{
                 return (<div className="nes-container is-rounded is-centered with-title is-dark" key={key}>

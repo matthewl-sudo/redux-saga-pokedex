@@ -38,7 +38,6 @@ const App = () => {
           <div className="grid-item box1 border">
             <div className="circle"></div>
             <br/><br/><br/>
-            <h3>search box</h3>
             {!search ?
               <button onClick={handleSearch}>Search</button>
               :
@@ -50,7 +49,6 @@ const App = () => {
             }
           </div>
           <div className="grid-item box2 border">
-            <h4>another info box</h4>
             <InfoTextContainer/>
           </div>
           <div className="grid-item box3 border">
