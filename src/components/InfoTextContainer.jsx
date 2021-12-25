@@ -18,7 +18,7 @@ const InfoTextContainer = () => {
    if(text){
        const colorDescription = text[2].name+", "+text[25].name+", "+text[10][7].genus;
        return(<div className="InfoTextContainer">
-                <p> {selectedPokemon}</p>
+                <i> {selectedPokemon}</i>
                 <div className="bloc-tabs">
                     <div className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                         onClick={()=>toggleTab(1)}>

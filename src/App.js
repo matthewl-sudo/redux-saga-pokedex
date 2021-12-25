@@ -52,7 +52,7 @@ const App = () => {
             <InfoTextContainer/>
           </div>
           <div className="grid-item box3 border">
-            <h4>main info box</h4>
+            <p>main info box</p>
             <InfoStatsContainer/>
           </div>
         </div>

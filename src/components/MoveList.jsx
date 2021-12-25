@@ -1,35 +1,20 @@
-import { React, } from "react";
+import { React, useState } from "react";
 import _ from "lodash";
-import deepdash from "deepdash";
-
+// import deepdash from "deepdash";
+import Move from "./Move";
 
 const MoveList = ({moves}) =>{
-    console.log('moves',moves);
-    let movesArray = [];
-    deepdash(_).eachDeep(moves, (value, k, path, context, parent, parentKey, parentPath) => {
-        if (typeof {k} === 'object' && k ==='name' && context.obj[0].version_group_details) {
-            movesArray.push({key: context.obj[0].version_group_details, value: value})
-        }
-        // switch (k) {
-        //     case "move":
-        //         movesArray.push(value)
-        //         break;
-        //     default:
-        //         return
-        // }
-        // if (k === "move") {
-        //     movesArray.push({name:value.name, url:, context});
-        // }
-        // else
-        // if (k) {
-        //     sum.push({key:  `${context.parent.key !== '0' ? context.parent.key : ''}${k === 'name'  ? '' : k}`,value : value});
-        // }
-
-    });
-    console.log(movesArray);
+   
     return(
         <div>
-
+            {moves.map((move, key) =>{
+                return <Move key={key} 
+                            moveName={ move.move.name}
+                            url={move.move.url}
+                            versionDetails={move.version_group_details}
+                    />
+                }
+            )}
         </div>
     )
 };
