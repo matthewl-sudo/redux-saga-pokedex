@@ -21,7 +21,7 @@ function useAsyncHook(currUrl){
         };
         if (currUrl !==  ""){
             fetchMoveDetails(currUrl);
-        } 
+        }
     }, [currUrl]);
 
     return [moveDetails, loading];
@@ -47,21 +47,38 @@ const Move = ({moveName, url, versionDetails}) =>{
 
         console.log('english text', Object.values(enText));
         console.log(moveDetails)
+
+        return(
+            <div>
+                <p onClick={() =>setMoveUrl(url)}>{moveName}
+                {_.isEmpty(moveDetails) ? (
+                    <i>blank</i>
+                ) : loading === "null" ? (
+                    <i>No details found</i>
+                ) : (
+                    <i>-{Object.values(enText)[0].flavor_text}</i>
+
+                )}
+                </p>
+            </div>
+        )
     }
-    return(
-        <div>
-            <p onClick={() =>setMoveUrl(url)}>{moveName}
-            {_.isEmpty(moveDetails) ? (
-                <i>blank</i>
-            ) : loading === "null" ? (
-                <i>No details found</i>
-            ) : (
-                <i>-{'nothing'}</i>
-                
-            )}
-            </p>
-        </div>
-    )
+    else {
+        return(
+            <div>
+                <p onClick={() =>setMoveUrl(url)}>{moveName}
+                {_.isEmpty(moveDetails) ? (
+                    <i>blank</i>
+                ) : loading === "null" ? (
+                    <i>No details found</i>
+                ) : (
+                    <i>-nothing</i>
+
+                )}
+                </p>
+            </div>
+        )
+    }
 };
 
 export default Move;

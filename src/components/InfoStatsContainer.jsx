@@ -12,7 +12,6 @@ const InfoStatsContainer = () => {
     const [currPage, setCurrPage] = useState(1);
     const [movesPerPage, setMovesPerPage] = useState(5);
     if (info) {
-        
         // Get current Moves
         const indexOfLastMove = currPage * movesPerPage;
         const indexOfFirstMove = indexOfLastMove - movesPerPage;
@@ -26,7 +25,7 @@ const InfoStatsContainer = () => {
                 <h3> {selectedPokemon.name} </h3>
                 <Carousel images={info[14]}/>
                 <MoveList moves={currMoves}/>
-                <Pagination movesPerPage={movesPerPage} 
+                <Pagination movesPerPage={movesPerPage}
                             totalMoves={info[9].length}
                             paginate={paginate}
                 />
