@@ -1,20 +1,21 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect,} from "react";
 
 const Pagination = ({movesPerPage, totalMoves, paginate}) =>{
-    const pageNumbers = [];
-    for(let i=1; i<=Math.ceil(totalMoves/movesPerPage); i++){
-        pageNumbers.push(i)
-    }
+    // const pageNumbers = [];
+    // for(let i=1; i<=Math.ceil(totalMoves/movesPerPage); i++){
+    //     pageNumbers.push(i)
+    // }
+    const pageNumbers = Math.ceil(totalMoves/movesPerPage);
     const [index, setIndex] = useState(1);
     const increment = (index) =>{
         paginate(index)
-        index <= pageNumbers.length ?
+        index <= pageNumbers-1 ?
         setIndex(index+1)
         : setIndex(index)
     }
     const decrement = (index) =>{
         paginate(index)
-        index >= 1 ?
+        index > 1 ?
         setIndex(index-1)
         : setIndex(index)
     }

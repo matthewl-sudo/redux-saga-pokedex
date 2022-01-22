@@ -36,7 +36,9 @@ const InfoTextContainer = () => {
                 <div className="content-tabs">
                     <div className={toggleState === 1 ? "content active-content" : "content"}>
                         <h4>Version Text</h4>
-                        <RichText text={text}/>
+                        <RichText text={text}
+                                  selectedPokemon={selectedPokemon}    
+                        />
                     </div>
                 </div>
                 <div className="content-tabs">

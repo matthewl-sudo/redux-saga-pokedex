@@ -8,10 +8,11 @@ font-family: 'Press Start 2P', cursive;}
 .text{
     overflow-y:scroll;
     scrollbar-width: thin;
-    height: 20rem;
+    height: 50vh;
     border-radius: 10px;
     border: 6px solid;
     background-color: lightgrey;
+    
 }
 
 .text::-webkit-scrollbar{

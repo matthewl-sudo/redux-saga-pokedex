@@ -18,7 +18,7 @@ const EvolutionChain = ({names, fetchProfileAction}) =>{
             <p>Evolutionary Forms</p>
             {!_.isEmpty(names) && names.length > 1 ?
                 names.map((name, i) =>(
-                    name!=selectedPokemon ?
+                    name !== selectedPokemon ?
                     <button
                         data-name={name}
                         key={i}

@@ -30,6 +30,7 @@ input{
   -webkit-border-radius: 50px 50px 50px 50px;
   -moz-border-radius: 0px 0px 0px 0px;
   border-radius: 50px 50px 50px 50px;
+  min-height: 90vh;
   .grid-item{
     position: relative;
     margin-left: 1.5rem;
@@ -229,7 +230,7 @@ input{
     display: grid;
     grid-template-columns: 1fr ;
     justify-content: center;
-    nav{
+    aside{
       height: 0px;
     }
   }
@@ -237,7 +238,7 @@ input{
     display: grid;
     grid-template-columns: 1fr ;
     justify-content: center;
-    nav{
+    aside{
       height: 0px;
     }
   }
