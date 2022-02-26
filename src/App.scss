@@ -20,6 +20,7 @@ input{
   display: grid;
   grid-template-columns: 500px 1fr ;
   justify-content: center;
+  padding-top: 1.5em;
   transition: all ease;
 }
 .inner-grid{
@@ -84,6 +85,7 @@ input{
   grid-template-columns: 250px 800px 250px ;
   justify-content: center;
   overflow-x: hidden;
+  padding-top: 1.5em;
 }
 .circle{
   background: linear-gradient(
@@ -121,7 +123,7 @@ input{
  }
  
  #menuToggle a:hover{
-   color: tomato;
+   color: linear;
  }
  
  
@@ -206,8 +208,24 @@ input{
     transform: translate(-100%, 0);
 
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    div{
+      display:flex;
+      align-items: center;
+      img{
+        padding-top: 10px;
+      }
+      li{
+
+        h5{
+          color: #1e6e6e;
+        }
+        p{
+          font-size: 0.75rem;
+        }
+      }
+    }
     li{
-    padding: 10px 0;
+    padding: 0 0 10px 10px;
     font-size: 22px;
   }
  }
@@ -230,14 +248,16 @@ input{
     display: grid;
     grid-template-columns: 1fr ;
     justify-content: center;
-    aside{
-      height: 0px;
+    padding-top: 0;
+    .aside{
+      height: 0;
     }
   }
   .single-column{
     display: grid;
     grid-template-columns: 1fr ;
     justify-content: center;
+    padding-top: 0;
     aside{
       height: 0px;
     }
@@ -319,7 +339,8 @@ input{
     }
   }
   #menu{
-    max-width: 80%;
+    // max-width: 80%;
+    width: 78vw;;
   }
   #menuToggle{
     top: 40px;

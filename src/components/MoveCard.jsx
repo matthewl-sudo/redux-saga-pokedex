@@ -3,29 +3,32 @@ import _ from "lodash";
 import { useDetectOutsideClick } from "./useDetectOutsideClick";
 import "./MoveCard.scss";
 import carotIcon from "./next.png"
+import MoveText from "./MoveText";
 
 function useAsyncHook(currUrl){
     // console.log(currUrl);
     const [moveDetails, setMoveDetails] = useState([]);
     const [loading, setLoading] = useState("false");
     useEffect(() => {
+      setLoading("true");
         async function fetchMoveDetails(currUrl){
             try{
-                setLoading("true");
                 const response = await fetch(currUrl);
                 const json = await response.json();
                 setMoveDetails(json)
                 // console.log("moveDEEET",moveDetails.name);
-                setLoading("false");
+                // setLoading("false");
 
             }
             catch(error){
                 setLoading("null");
                 console.log('err', error);
             }
+            setTimeout(function(){setLoading("false")}, 1000)
         };
+        
         if (currUrl !==  ""){
-            fetchMoveDetails(currUrl);
+            fetchMoveDetails(currUrl)
         }
     }, [currUrl]);
 
@@ -34,27 +37,31 @@ function useAsyncHook(currUrl){
 const MoveCard = ({moveName, url, versionDetails}) =>{
     const dropdownRef = useRef(null);
     const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
-    const onClick = () => setIsActive(!isActive);
+    const onClick = (url) => {
+      setMoveUrl(url)
+      setIsActive(!isActive);
+    }
     
     const [moveUrl, setMoveUrl] = useState("")
     const [moveDetails, loading] = useAsyncHook(moveUrl);
-
-    if(moveName){
-        
-
+    console.log(moveDetails);
+   
+    
+  
         return(
-                <div className="container"onClick={() =>setMoveUrl(url)}>
+                <div className="container">
                 {_.isEmpty(moveDetails) ? (
                     <div className="menu-container">
                       <span>
-                        <button onClick={onClick} className="menu-trigger">
+                        <button  onClick={() =>onClick(url)} className="menu-trigger">
                           
-                          <img className="toggle" aria-expanded={isActive}
+                          <img className={`toggle${isActive ? "active" : "inactive"}`}
                             src={carotIcon}
-                            alt="User avatar"
+                            alt="icon"
                           />
                         </button>
-                      {moveName}</span>
+                        {moveName}
+                      </span>
                       <nav
                         ref={dropdownRef}
                         className={`menu ${isActive ? "active" : "inactive"}`}
@@ -62,31 +69,35 @@ const MoveCard = ({moveName, url, versionDetails}) =>{
                       </nav>
                     </div>
                 ) : loading === "true" ? (
-                    <i>loading</i>
+                  <div className="spinner-pokeball"></div>
                 ) : (
                     <div className="menu-container">
-                      <span><button onClick={onClick} className="menu-trigger">
-                        <img className="toggle" aria-expanded={isActive}
+                      <span><button  onClick={() =>onClick(url)} className="menu-trigger">
+                        <img className={`toggle${isActive ? "active" : "inactive"}`} 
                           src={carotIcon}
-                          alt="User avatar"
+                          alt="icon"
                         />
                       </button>
-                      {moveName}</span>
+                      {moveName}:
+                      </span>
                       <nav
                         ref={dropdownRef}
                         className={`menu ${isActive ? "active" : "inactive"}`}
                       >
-                        <ul>
-                          <li>
-                            <p>Power:{moveDetails.power}</p>
-                          </li>
+                        <ul className="moveDropDown">
+                          <li>Type:{moveDetails.type.name}</li>
+                          <li>Power:{moveDetails.power}</li>
+                          <li>Accuracy:{moveDetails.accuracy}</li>
+                          <li>PP:{moveDetails.pp}</li>
+                          <li>Damage-Type:{moveDetails.damage_class.name}</li>
+                          <li>Effect:{moveDetails.effect_entries[0].short_effect}</li>
+                          <MoveText text={moveDetails} versionDetails={versionDetails}/>
                         </ul>
                       </nav>
                     </div>
                 )}
                 </div>
         )
-    }
 };
 
 export default MoveCard;

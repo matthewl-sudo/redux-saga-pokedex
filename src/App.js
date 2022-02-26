@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import './App.scss';
 //components
+import SideBarPanel from './components/SideBarPanel';
 import AutoComplete from './components/AutoComplete';
 import ListSelection from './components/ListSelection';
 //containers
@@ -20,20 +21,7 @@ const App = () => {
   }
   return (
     <div className={panel ? "grid" : "single-column"}>
-        <nav role="navigation" className="">
-          <div id="menuToggle">
-            <input type="checkbox" onClick={handlePanel}/>
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-              <a href="#home"><li>Home</li></a>
-              <a href="#about"><li>About</li></a>
-              <a href="#info"><li>Info</li></a>
-              <p>what exactly is going on under the hood?</p>
-            </ul>
-          </div>
-        </nav>
+        <SideBarPanel handlePanel={handlePanel}/>
         <div className="inner-grid">
           <div className="grid-item box1 border">
             <div className="circle"></div>
@@ -52,7 +40,7 @@ const App = () => {
             <InfoTextContainer/>
           </div>
           <div className="grid-item box3 border">
-            <p>main info box</p>
+            {/* <p>main info box</p> */}
             <InfoStatsContainer/>
           </div>
         </div>

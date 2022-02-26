@@ -9,6 +9,7 @@ const Carousel = (images) =>{
 
     const versionImgs = Object.keys(pokeimg.versions).map((img, key)=>{
         // console.log("gen:", key+1 , Object.keys(_.values(pokeimg.versions[img])[0]), img)
+        // eslint-disable-next-line
         const genImg = Object.keys(_.values(pokeimg.versions[img])[0]).map((i, key)=>{
             if (typeof _.values(pokeimg.versions[img])[0][i] != 'object' && _.values(pokeimg.versions[img])[0][i] != null) {
                 // console.log( i, key, _.values(pokeimg.versions[img])[0][i]);
@@ -20,6 +21,7 @@ const Carousel = (images) =>{
     // console.log('jaja', pokeimg);
     const otherImgs = _.values(pokeimg.other).map((img, key)=>{
         // console.log('img' , img, 'key', key, '.value')
+        // eslint-disable-next-line
         const otherImg = _.values(img).map((i, key)=>{
             if (i != null) {
                 // console.log(i, key)
@@ -28,6 +30,7 @@ const Carousel = (images) =>{
         })
         return otherImg;
     });
+    // eslint-disable-next-line
     const spriteImg = Object.keys(pokeimg).map((img, key) =>{
         // console.log('pokeimg', pokeimg[img]);
         if ( pokeimg[img] != null && typeof pokeimg[img] != 'object') {
@@ -38,6 +41,7 @@ const Carousel = (images) =>{
     useEffect(()=>{
         setImgState(imgState => [ otherImgs, versionImgs, spriteImg]);
         setIndex(0);
+        // eslint-disable-next-line
     }, [pokeimg]);
     // console.log('imgState', _.pull(_.flattenDeep(imgState), undefined));
 

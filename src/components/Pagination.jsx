@@ -1,4 +1,5 @@
 import React,{useState, useEffect,} from "react";
+import "./Pagination.scss";
 
 const Pagination = ({movesPerPage, totalMoves, paginate}) =>{
     // const pageNumbers = [];
@@ -23,13 +24,11 @@ const Pagination = ({movesPerPage, totalMoves, paginate}) =>{
         setIndex(1);
     }, [totalMoves]);
     return(
-        <div>
-            <span className="pagination">
-                <button className="page-item" onClick={()=> decrement(index)}> Back</button>
-                {index}
-                <button className="page-item" onClick={()=> increment(index)}> Forward</button>
-            </span>
-        </div>
+        <span className="pagination">
+            <button className="page-item" onClick={()=> decrement(index)}> Back</button>
+            {index}
+            <button className="page-item" onClick={()=> increment(index)}> Forward</button>
+        </span>
             // <ul className="pagination">
             //     {pageNumbers.map(number =>{
             //         return(

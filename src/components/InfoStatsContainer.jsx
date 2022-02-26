@@ -27,7 +27,7 @@ const InfoStatsContainer = () => {
         // console.log('info', info)
 
         return(<div className="infoStatsContainer">
-                <h3> {selectedPokemon.name} </h3>
+                <h4> {'No: #' + info[6] + ' / ' + selectedPokemon.name} </h4>
                 <Carousel images={info[14]}/>
                 <div className="bloc-tabs">
                     <div className={toggleState === 1 ? "tabs active-tabs" : "tabs"}

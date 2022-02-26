@@ -1,0 +1,75 @@
+.horizontal-snap {
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.75rem;
+    // height: max-content;
+    padding: 0.5rem;
+    width: 18rem;
+    min-width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    p {
+        width: 15rem;
+        max-width: none;
+        object-fit: contain;
+        border-radius: 1rem;
+      }
+  }
+.horizontal-version-text {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.75rem;
+    // height: max-content;
+    padding-top: 0.5rem;
+    width: 18rem;
+    min-width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    .version-text{
+        width: 20ch;
+        word-spacing: -8px;
+        text-transform: capitalize;
+        font-size: 10px;
+    }
+}
+  .horizontal-snap > span {
+    scroll-snap-align: center;
+    border: 1px solid black;
+
+  }
+  
+
+  
+  .horizontal-snap::-webkit-scrollbar{
+    // width: max-content;
+    cursor: pointer;
+    pointer-events: auto;
+
+}
+
+.horizontal-snap::-webkit-scrollbar-track {
+    background-color:black;
+    border-radius: 10px;
+    width: 70%;
+
+}
+
+.horizontal-snap::-webkit-scrollbar-thumb {
+    background-image:url(https://www.pinclipart.com/picdir/big/558-5584196_pixel-art-pokeball-clipart-png-download-pokemon-pixel.png);
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 28%;
+    background-clip: content-box;
+    cursor: grab;
+    pointer-events: auto;
+}
+
+.horizontal-snap::-webkit-scrollbar-thumb:hover {
+    background-image: url(https://www.pngkit.com/png/full/228-2289847_master-ball-pixel-art-pokeball.png); 
+    cursor: pointer;
+    pointer-events: auto;
+}

@@ -44,7 +44,7 @@ const InfoTextContainer = () => {
                 <div className="content-tabs">
                     <div className={toggleState === 2 ? "content active-content" : "content"}>
                         <h4>Evolutionary Forms</h4>
-                        <EvolutionChain names={names}/>
+                        <EvolutionChain names={names} color={text[2].name}/>
                     </div>
                 </div>
                 <div className="content-tabs">

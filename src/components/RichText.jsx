@@ -11,6 +11,7 @@ const RichText = ({text}) =>{
         arr => arr.filter(([key, value]) => value.language.name === "en"),
         arr => arr.reduce(
             (acc, value) => (
+                // eslint-disable-next-line
                 value && value[1].flavor_text && acc.set(value[1].flavor_text, value),
                 acc
                 ), // using map (preserves ordering)
