@@ -1,0 +1,176 @@
+
+  :root{
+	--button_padding: 1em;
+	--text_stroke: 0.125em;
+	--border_width: 0.25em;
+	
+	--border_color: #10141F;
+	--text_color: #EBEDE9;
+	
+	--font: "Press Start 2P", display;
+
+	--button_height: 4em;
+  }
+  $text-stroke: 0.125em;
+  $button-padding: 1em;
+  $border-width: 0.25em;
+  $border-color: #10141F;
+  $text-color: #EBEDE9;
+  $font: "Press Start 2P", display;
+  $button-height: 4em;
+
+  .red {
+	--button_background: #ca2828;
+	--button_dark_shadow: #730D0D;
+	--button_light_shadow: #E87D7D;
+  }
+  
+  .blue {
+	--button_background: #4F8FBA;
+	--button_dark_shadow: #253A5E;
+	--button_light_shadow: #A4DDDB;
+  }
+  
+  .green {
+	--button_background: #75A743;
+	--button_dark_shadow: #25562E;
+	--button_light_shadow: #D0DA91;
+  }
+  
+  .yellow {
+	--button_background: #BE772B;
+	--button_dark_shadow: #602C2C;
+	--button_light_shadow: #E8C170;
+  }
+  .pink {
+	--button_background: #f566e2;
+	--button_dark_shadow: #f102bd;
+	--button_light_shadow: #e488f0;
+  }
+  
+  .black {
+	--button_background: #39454e;
+	--button_dark_shadow: #212327;
+	--button_light_shadow: #abbdbc;
+  }
+  
+  .purple {
+	--button_background: #ab54b3;
+	--button_dark_shadow: #620362;
+	--button_light_shadow: #f681f6;
+  }
+  .brown {
+	--button_background: #a54a0d;
+	--button_dark_shadow: #602C2C;
+	--button_light_shadow: #ca9732;
+  }
+  .white {
+	--button_background: #c9f1f1;
+	--button_dark_shadow: #9e9e9e;
+	--button_light_shadow: #c2bfb9;
+  }
+  .gray{
+	--button_background: darkgrey;
+	--button_dark_shadow: grey;
+	--button_light_shadow: lightgrey;
+  }
+  .inactive{
+	--button_background: rgb(144, 138, 138);
+	--button_dark_shadow: rgb(88, 88, 88);
+	--button_light_shadow: rgb(175, 169, 169);
+  }
+  
+  .button {
+	font-size: 1rem;
+	display: inline-block;
+	padding: 0 calc($border-width*2);
+	width: 100%;
+	box-sizing: border-box;
+
+  }
+  .button button {
+  /*  font size and padding  */
+	font-size: 1em;
+	line-height: 1.3em;
+ // padding: 0 calc($button-padding*2); 
+	width: 100%;
+	height: $button-height;
+	
+  /*  colours  */
+	background: var(--button_background);
+	color: $text-color;
+	
+  /*  text  */
+	font-family: $font;
+	text-shadow:  -$text-stroke -$text-stroke 0 #000, 
+				  $text-stroke -$text-stroke 0 #000,
+				  -$text-stroke $text-stroke 0 #000, 
+				  $text-stroke $text-stroke 0 #000;
+	
+  /*  border  */
+	border: none;
+	border-top: $border-width solid $border-color;
+	border-bottom: $border-width solid $border-color;
+	
+  /*  box-shadow  */
+	box-shadow: 0 calc($border-width *-1) var(--button_dark_shadow) inset, 
+				0 $border-width var(--button_light_shadow) inset;
+	
+  /*  cursor  */
+	cursor: pointer;
+	
+  /*  position  */
+	position: relative;
+  }
+  
+  .button button:focus {
+	outline: none;
+  }
+  
+  
+  .button button::after,
+  .button button::before {
+  /*  content  */
+	content: "";
+	
+  /*  dimensions  */
+	width: $border-width;
+	height: calc(100% - $border-width*2);
+	
+  /*  colours  */
+	background: var(--button_background);
+	
+  /*  border  */
+	border-top: $border-width solid $border-color;
+	border-bottom: $border-width solid $border-color;
+	
+  /*  box-shadow */
+	box-shadow: 0 calc($border-width*-1) var(--button_dark_shadow) inset, 
+				0 $border-width var(--button_light_shadow) inset;
+	
+  /*  positions  */
+	position: absolute;
+	top: 0;
+  }
+  
+  .button button::after {
+	right: calc($border-width *-2);
+	border-right: $border-width solid $border-color;
+  }
+  .button button::before {
+	left: calc($border-width *-2);
+	border-left:$border-width solid $border-color;
+  }
+  
+  
+  @keyframes flash{
+	0% {opacity: 0}
+	49%{opacity: 0}
+	50% {opacity: 1}
+  }
+
+  .indicator{
+	  top: 5px;
+	  font-size: x-large;
+	  animation: flash 1.5s linear infinite;
+  }

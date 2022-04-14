@@ -29,11 +29,11 @@ const RichText = ({text}) =>{
 
     return(
         <div>
-            <div className="text" ref={scrollRef}>
+            <div className="text-container" ref={scrollRef}>
                 {Object.values(enText).map((value, key) =>{
-                return (<div className="nes-container is-rounded is-centered with-title is-dark" key={key}>
-                            <p className="title is-primary">Ver : {value.version.name}</p>
-                            <p style={{fontSize:15}}>{value.flavor_text}</p>
+                return (<div className="dialogue-box" key={key}>
+                            <p>{value.flavor_text}</p>
+                            <p className="author">~{value.version.name}</p>
                         </div>)
                     })
                 }

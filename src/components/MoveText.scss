@@ -5,19 +5,68 @@
     gap: 0.75rem;
     // height: max-content;
     padding: 0.5rem;
-    width: 18rem;
-    min-width: 100%;
+    width: 10rem;
+    min-width: 97%;
     overflow-y: hidden;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
-    p {
-        width: 15rem;
-        max-width: none;
-        object-fit: contain;
-        border-radius: 1rem;
-      }
-  }
+    > span {
+        scroll-snap-align: center;
+        border: 1px solid black;
+    
+    }
+    .dialogue-box{
+    border-radius: 2px;
+    padding: 5px;
+    line-height: 0.8em;
+    // margin: auto;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 1px black,
+                inset 0 1px 0 1px black,
+                0 0 0 1px black,
+                inset 0 0 0 1px black;
+        .author{
+            margin-right: 0px;
+            color: rgb(58, 58, 153);
+            font-size: 0.5em;
+            width: 30ch;
+            text-transform: capitalize;
+
+            > i {
+                position: absolute;
+                top: 80%;
+                right:5%;
+                width: 0;
+                height: 0;
+                border: 7px solid transparent;
+                border-top-color: black;
+                animation: bounce 0.5s ease-in-out infinite alternate;
+                // float: right;
+                @keyframes bounce {
+                    from { margin-top: 0px; }
+                    to { margin-top: 3px; }
+                    }
+                }  
+        }
+        > p{
+            font-size: 10px;
+            word-spacing: -2px;
+            width: 24ch;
+            max-width: none;
+            object-fit: contain;
+            border-radius: 1rem;
+        }
+         
+    }
+    // p {
+    //     width: 24ch;
+    //     max-width: none;
+    //     object-fit: contain;
+    //     border-radius: 1rem;
+    // }
+}
+
 .horizontal-version-text {
     display: grid;
     grid-auto-flow: column;
@@ -35,30 +84,34 @@
         word-spacing: -8px;
         text-transform: capitalize;
         font-size: 10px;
+        // max-width: none;
+        // object-fit: contain;
+        scroll-snap-align: center;
+        p{
+            img{
+                position: relative;
+                top: -5px;;
+            }
+        }
+    }
+    :nth-child(1){
+        word-spacing: -4px;
+        font-size: 8px;
+        text-transform: none;
     }
 }
-  .horizontal-snap > span {
-    scroll-snap-align: center;
-    border: 1px solid black;
-
-  }
   
-
-  
-  .horizontal-snap::-webkit-scrollbar{
+.horizontal-snap::-webkit-scrollbar{
     // width: max-content;
     cursor: pointer;
     pointer-events: auto;
 
 }
-
 .horizontal-snap::-webkit-scrollbar-track {
     background-color:black;
     border-radius: 10px;
     width: 70%;
-
 }
-
 .horizontal-snap::-webkit-scrollbar-thumb {
     background-image:url(https://www.pinclipart.com/picdir/big/558-5584196_pixel-art-pokeball-clipart-png-download-pokemon-pixel.png);
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -67,8 +120,32 @@
     cursor: grab;
     pointer-events: auto;
 }
-
 .horizontal-snap::-webkit-scrollbar-thumb:hover {
+    background-image: url(https://www.pngkit.com/png/full/228-2289847_master-ball-pixel-art-pokeball.png); 
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+//version scroll bar
+.horizontal-version-text::-webkit-scrollbar{
+    // width: max-content;
+    cursor: pointer;
+    pointer-events: auto;
+}
+.horizontal-version-text::-webkit-scrollbar-track {
+    background-color:black;
+    border-radius: 10px;
+    width: 70%;
+}
+.horizontal-version-text::-webkit-scrollbar-thumb {
+    background-image:url(https://www.pinclipart.com/picdir/big/558-5584196_pixel-art-pokeball-clipart-png-download-pokemon-pixel.png);
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 1.2rem;
+    background-clip: content-box;
+    cursor: grab;
+    pointer-events: auto;
+}
+.horizontal-version-text::-webkit-scrollbar-thumb:hover {
     background-image: url(https://www.pngkit.com/png/full/228-2289847_master-ball-pixel-art-pokeball.png); 
     cursor: pointer;
     pointer-events: auto;

@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "Pokedex by Matt Larose",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

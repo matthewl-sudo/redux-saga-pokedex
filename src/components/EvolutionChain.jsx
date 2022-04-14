@@ -3,7 +3,7 @@ import { fetchProfileAction } from "../actions";
 import {connect} from "react-redux";
 import _ from "lodash";
 import { useSelector } from "react-redux";
-import "./EvolutionChain.scss";
+import "./EvolutionChain.css";
 // import {useDispatch, useSelector} from "react-redux";
 
 
@@ -17,29 +17,25 @@ const EvolutionChain = ({names, color, fetchProfileAction}) =>{
   console.log('name', color);
     return(
         <div>
-           
-            {/* <div class="social-buttons">
-                <button onClick={()=> alert("hi")} class="social-btn entypo-tumblr" ><div class="hover"><span>aaa</span>qqqq<span>swqswq</span>wdwd<span>wqdqd</span>wqssw<span>sqs</span>dqwdw</div><div class="sr"></div></button> 
-            </div> */}
             {!_.isEmpty(names) && names.length > 1 ?
-                names.map((name, i) =>(
-                    name !== selectedPokemon ?
-                    <div class={`button ${color}`}>
+                names.map((name, i) =>(<div key={i}>
+                   { name !== selectedPokemon ?
+                    <div className={`button ${color}`}>
                         <button
                             data-name={name}
                             key={i}
                             onClick={dispatchBtnAction}>{name}
                         </button>
                     </div>:
-                    <div class="button inactive" >
+                    <div className="button inactive" >
                         <button
                             className="inactive"
                             data-name={name}
                             key={i}
                             ><span className="indicator">&gt;</span>{name}
                         </button>
-                    </div>)
-                )
+                    </div>}
+                </div>))
             :
                 <p> does not have any known evolutionary forms</p>}
         </div>

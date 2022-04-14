@@ -22,10 +22,14 @@
     grid-column-end: 2;
     grid-row-start: 1;  
     grid-row-end: 3;
-    margin-bottom: 1.5em;
+    // margin-bottom: 1.5em;
+    .stats-list{
+        text-transform: capitalize;
+        font-size: 0.7em;
+    }
 }
 
-p, h4, h3{
+h4, h3{
     text-transform: capitalize;
 }
 

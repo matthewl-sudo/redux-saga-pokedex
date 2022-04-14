@@ -242,7 +242,7 @@ input{
  //mobile screen sizes
 @media only screen and (max-width: 600px) {
   h1, h2, h3, h4, h5, p{
-    font-size: 0.8em;
+    font-size: 0.7rem;
   }
   .grid{
     display: grid;
@@ -327,7 +327,7 @@ input{
         }
       }
     }
-    .text{
+    .text-container{
       overflow-y: visible;
       height: 100%;
     }

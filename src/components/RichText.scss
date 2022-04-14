@@ -1,34 +1,51 @@
 html, body, pre, code, kbd, samp {
 font-family: 'Press Start 2P', cursive;}
 
-.title{
-    color: blue;
-}
-
-.text{
+.text-container{
     overflow-y:scroll;
     scrollbar-width: thin;
     height: 50vh;
-    border-radius: 10px;
-    border: 6px solid;
-    background-color: lightgrey;
+    border-radius: 5px;
+    border: 2px solid;
+    background-color: rgb(194, 193, 193);
+    .dialogue-box{
+        border-radius: 2px;
+        padding: 5px;
+        line-height: 0.8em;
+        // margin: auto;
+        border: 1px solid white;
+        box-shadow: 0 1px 0 1px black,
+                    inset 0 1px 0 1px black,
+                    0 0 0 1px black,
+                    inset 0 0 0 1px black;
+        .author{
+            color: rgb(58, 58, 153);
+            font-size: 8px;
+            text-transform: capitalize;
+        }
+        > p{
+            font-size:10;
+        }   
+    }
     
 }
 
-.text::-webkit-scrollbar{
-    width: 18px;
+.text-container::-webkit-scrollbar{
+    width: minmax(0.6em, 0.8em);
+    // min-width: 0.6em;
+    // max-width: 1em;
     cursor: pointer;
     pointer-events: auto;
 
 }
 
-.text::-webkit-scrollbar-track {
-    background-color:black;
-    border-radius: 10px;
+.text-container::-webkit-scrollbar-track {
+    background-color:rgb(116, 113, 113);
+    border-radius: 5px;
 
 }
 
-.text::-webkit-scrollbar-thumb {
+.text-container::-webkit-scrollbar-thumb {
     // background-color: #d6dee1;
     // border-radius: 10px;
     // border: 6px solid;
@@ -41,7 +58,7 @@ font-family: 'Press Start 2P', cursive;}
     pointer-events: auto;
 }
 
-.text::-webkit-scrollbar-thumb:hover {
+.text-container::-webkit-scrollbar-thumb:hover {
     background-image: url(https://www.pngkit.com/png/full/228-2289847_master-ball-pixel-art-pokeball.png); 
     cursor: pointer;
     pointer-events: auto;

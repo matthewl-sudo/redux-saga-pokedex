@@ -19,8 +19,8 @@ const Stats = (info) =>{
                 )}</p>
             </div>
             <div className="gridItem statBox2">
-                {statInfo[15].map(el =>{
-                            return <p key={el.stat.name}>{el.stat.name}: {el.base_stat}</p>
+                {statInfo[15].map((value, key) =>{
+                            return <p className="stats-list" key={key}>{value.stat.name}: {value.base_stat}</p>
                         })
                     }
 
