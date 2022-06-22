@@ -45,7 +45,6 @@ const InfoStatsContainer = () => {
                 </div>
                 <div className="content-tabs">
                     <div className={toggleState === 1 ? "content active-content" : "content"}>
-                        <h4>Moves</h4>
                         <MoveList moves={currMoves}/>
                         <Pagination movesPerPage={movesPerPage}
                                     totalMoves={info[9].length}
@@ -55,7 +54,6 @@ const InfoStatsContainer = () => {
                 </div>
                 <div className="content-tabs">
                     <div className={toggleState === 2 ? "content active-content" : "content"}>
-                        <h4>Stats</h4>
                         <Stats info={info}/>
                     </div>
                 </div>

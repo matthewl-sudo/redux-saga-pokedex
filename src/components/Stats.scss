@@ -2,12 +2,14 @@
     display: grid;
     grid-template-columns: 1fr, 1fr;
     /* background-color: red; */
-    height: 15rem;
+    height: 25rem;
+    // overflow: hidden;
+    justify-items:center;
 }
-  
+
 .gridItem{
     position: relative;
-    width: 90%;
+    width: 100%;
     background-color: lightcyan;
 }
 .statBox1{
@@ -18,10 +20,13 @@
 }
   
 .statBox2 {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;  
-    grid-row-end: 3;
+  
+    height: 18rem;
+    width: 18rem;
+    // grid-column-start: 2;
+    // grid-column-end: 2;
+    grid-row-start: 2;  
+    grid-row-end: 2;
     // margin-bottom: 1.5em;
     .stats-list{
         text-transform: capitalize;
@@ -133,4 +138,5 @@ h4, h3{
     border-top-color: #B8A0F8;
     border-bottom-color: #483890;
 }
+
 
