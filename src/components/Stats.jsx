@@ -28,12 +28,12 @@ const Stats = (info) => {
 	const statInfo = info.info;
 	console.log("statInfo", statInfo);
 	// const statColor = color["red"];
-	const statColor = color[statInfo[17][0].type.name];
+	const statColor = color[statInfo[18][0].type.name];
 	// console.log("color", statColor);
 	const weight =
-		statInfo[18].toString().slice(0, statInfo[18].toString().length - 1) +
+		statInfo[19].toString().slice(0, statInfo[19].toString().length - 1) +
 		"." +
-		statInfo[18].toString().slice(statInfo[18].toString().length - 1);
+		statInfo[19].toString().slice(statInfo[19].toString().length - 1);
 
 	const data = {
 		//Will show up on each radar points in clockwise order
@@ -44,12 +44,12 @@ const Stats = (info) => {
 				//one data obj per set, order same as labels
 				data: [
 					// statInfo[15].map((value) => value.base_stat)
-					statInfo[16][0]["base_stat"], //HP
-					statInfo[16][1]["base_stat"], //Atk
-					statInfo[16][2]["base_stat"], //Def
-					statInfo[16][3]["base_stat"], //SpA
-					statInfo[16][4]["base_stat"], //SpD
-					statInfo[16][5]["base_stat"], //Speed
+					statInfo[17][0]["base_stat"], //HP
+					statInfo[17][1]["base_stat"], //Atk
+					statInfo[17][2]["base_stat"], //Def
+					statInfo[17][3]["base_stat"], //SpA
+					statInfo[17][4]["base_stat"], //SpD
+					statInfo[17][5]["base_stat"], //Speed
 				],
 				backgroundColor: statColor,
 				borderWidth: 10,
@@ -64,29 +64,29 @@ const Stats = (info) => {
 	return (
 		<div className="statsGrid">
 			<div className="gridItem statBox1">
-				<h4>{statInfo[2][0].name}</h4>
+				<h4>{statInfo[3][0].name}</h4>
 				<p>
 					Weight: {weight}Kg/{Math.round(weight * 2.205)}Lbs
 				</p>
 				<p>
 					Height:{" "}
-					{statInfo[4].toString().length > 1
-						? statInfo[4]
+					{statInfo[5].toString().length > 1
+						? statInfo[5]
 								.toString()
-								.slice(0, statInfo[4].toString().length - 1) +
+								.slice(0, statInfo[5].toString().length - 1) +
 						  "." +
-						  statInfo[4].toString().slice(statInfo[4].toString().length - 1)
+						  statInfo[5].toString().slice(statInfo[5].toString().length - 1)
 						: "0." +
-						  statInfo[4].toString().slice(statInfo[4].toString().length - 1)}
+						  statInfo[5].toString().slice(statInfo[5].toString().length - 1)}
 					M
 				</p>
 				<p className="t-type">
 					Type:{" "}
-					{statInfo[17].map((i, key) => {
+					{statInfo[18].map((i, key) => {
 						return (
-							<span className={statInfo[17][key].type.name} key={key}>
+							<span className={statInfo[18][key].type.name} key={key}>
 								{key > 0 ? "" : ""}
-								{statInfo[17][key].type.name}
+								{statInfo[18][key].type.name}
 							</span>
 						);
 					})}

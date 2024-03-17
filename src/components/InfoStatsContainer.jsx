@@ -20,7 +20,7 @@ const InfoStatsContainer = () => {
 		// Get current Moves
 		const indexOfLastMove = currPage * movesPerPage;
 		const indexOfFirstMove = indexOfLastMove - movesPerPage;
-		const currMoves = info[9].slice(indexOfFirstMove, indexOfLastMove);
+		const currMoves = info[10].slice(indexOfFirstMove, indexOfLastMove);
 
 		// Change page
 		const paginate = (pageNumber) => setCurrPage(pageNumber);
@@ -29,7 +29,7 @@ const InfoStatsContainer = () => {
 		return (
 			<div className="infoStatsContainer">
 				<h4> {"No: #" + info[6] + " / " + selectedPokemon.name} </h4>
-				<Carousel images={info[15]} />
+				<Carousel images={info[16]} />
 				<div className="bloc-tabs">
 					<div
 						className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
@@ -55,7 +55,7 @@ const InfoStatsContainer = () => {
 						<MoveList moves={currMoves} />
 						<Pagination
 							movesPerPage={movesPerPage}
-							totalMoves={info[9].length}
+							totalMoves={info[10].length}
 							paginate={paginate}
 						/>
 					</div>
